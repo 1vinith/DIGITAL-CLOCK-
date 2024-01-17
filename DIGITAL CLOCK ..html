@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic clock</title>
+</head>
+
+<body>
+    <p id="para"> <u>DIGITAL CLOCK</u>  </p> </p>
+    <p id="clock"> </p>
+    <p id="date"> </p>
+    <style>
+        html{
+            /* background-color: black; */
+            background-image: url(https://media.istockphoto.com/id/1341348395/photo/old-dark-brown-wooden-board.webp?b=1&s=170667a&w=0&k=20&c=2RkgZGKXuSVu78tb-13vUpNiHacLoYgQ9MwAt0_5KiI=);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        #para{
+            /* color: white; */
+            text-align: center;
+            font-size: 60px;
+            color: #7fee07;
+            font-weight: bolder;
+        }
+        #clock{
+            text-align: center;
+            justify-content: center;
+            font-size: 120px;
+            font-family: fantasy;
+            display: flex;
+            color: #10c180;
+            margin-bottom: 20px;
+        }
+        #date{
+            margin: 0px;
+            text-align: center;
+            justify-content: center;
+            font-size: 100px;
+            font-family: fantasy;
+            display: flex;
+            color: #f8f8f8;
+            margin-bottom: 20px;
+        }
+    </style>
+        
+    <script>
+        var dynamic=setInterval(dynamic_clock , 0);
+        function dynamic_clock() {
+            var dt=new Date();
+            var dat=dt.toLocaleTimeString();
+            document.getElementById('clock').innerHTML=('Time-' + dat);
+        }
+        var dt=new Date();
+        var year=dt.getUTCFullYear();
+        var day=dt.getUTCDate();
+        var month=dt.getUTCMonth()+1;
+        // document.write(year + '/' + month + '/' + day);
+        document.getElementById('date').innerHTML=('Date-' + year + '/' + month + '/' + day);
+        // console.log('Date-' + year + '/' + month + '/' + day)
+
+    </script>
+</body>
+</html>
